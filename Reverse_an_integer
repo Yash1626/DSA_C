@@ -1,0 +1,18 @@
+#include <stdio.h> // Include the standard input-output library
+
+int main() {
+    int n, k = 0; // Declare two integer variables n and k, initialize k to 0
+    scanf("%d", &n); // Read an integer value from the user and store it in n
+    printf("%d", n); // Print the value of n
+
+    // Loop to reverse the digits of the number n
+    for(int i = 0; n > 0; i++) {
+        int j = n % 10; // Get the last digit of n
+        k = k * 10 + j; // Add the last digit to k, shifting the previous digits left
+        n = n / 10; // Remove the last digit from n
+    }
+
+    // Print the reversed integer
+    printf("\nReverse of the integer is:\t %d", k);
+    return 0; // Return 0 to indicate successful completion
+}
