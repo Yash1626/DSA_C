@@ -1,0 +1,32 @@
+#include <stdio.h>
+
+/*
+* Main function to calculate row and column sums of a 2D array.
+*/
+int main() {
+  int rsum, csum;
+  int arr[5][5] = {
+    {5, 8, 4, 3, 6},
+    {7, 3, 6, 1, 8},
+    {9, 2, 5, 4, 7},
+    {1, 2, 3, 4, 5},
+    {7, 4, 5, 6, 8}
+  };
+  
+  printf("Row sum is :\n");
+  
+  // Calculate row and column sums
+  for(int i = 0; i < 5; i++) {
+    for(int j = 0; j < 5; j++) {
+      rsum = rsum + arr[i][j];
+      csum = csum + arr[j][i];
+    }
+    
+    // Print row and column sums
+    printf("R %d %d\t", i, rsum);
+    printf("C %d %d\n", i, csum);
+    
+    rsum = 0;
+    csum = 0;
+  }
+}
